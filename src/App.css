@@ -1,0 +1,67 @@
+/* src/App.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+h1 {
+  color: #007bff;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom styles for the CurrencySelector component */
+.select-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Custom styles for the DurationSelector component */
+.duration-label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Custom styles for the ExchangeRateChart component (placeholder) */
+.chart-placeholder {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom styles for the dropdowns */
+.form-control {
+  border-radius: 5px;
+}
+
+/* Custom styles for the dropdown arrow */
+.select-arrow {
+  right: 12px !important;
+}
+
+/* Optional: Add hover effect for dropdowns */
+.form-control:hover {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Optional: Add transition effect for smoother changes */
+.form-control {
+  transition: box-shadow 0.3s ease-in-out;
+}
