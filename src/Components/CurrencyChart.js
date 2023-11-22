@@ -14,8 +14,8 @@ const CurrencyChart = ({ data, currencyName }) => {
   return (
     <ResponsiveContainer width={700} height={212}>
       <LineChart data={data}>
-        <XAxis dataKey="label" />
-        <YAxis />
+        <XAxis dataKey="label" tick={{ fill: '#fff' }} />
+        <YAxis tick={{ fill: '#fff' }} />
         <Tooltip
           formatter={(value) => [
             value,

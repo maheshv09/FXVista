@@ -64,7 +64,7 @@ const App = () => {
       </div>
       <div className="second_grid">
         <div className="line_graph">
-          <h1>Exchange Rate Dashboard</h1>
+          <h1>FORXFLOW - BRIDGING CURRENCIES</h1>
           <div className="currencies">
             <div className="currencies1">
               <CurrencySelector

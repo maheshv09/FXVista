@@ -10,7 +10,7 @@
 
 .convertor_grid h2 {
   font-weight: 700;
-  color: #f74646; /* Reddish color */
+  color: #4ECCA3; /* Reddish color */
   font-size: 22px;
   margin-bottom: 20px;
 }
@@ -18,7 +18,7 @@
 /* Label Styles */
 label {
   font-weight: 700;
-  color: #333; /* Dark gray color */
+  color: #fefefe; /* Dark gray color */
   font-size: 18px;
   margin-bottom: 12px;
 }
@@ -55,8 +55,8 @@ label {
   border-radius: 5px;
   cursor: pointer;
   color: #fff;
-  background-color: #02ad38;
-  border: 2px solid #02ad38;
+  background-color: #4ECCA3;
+  border: 2px solid #4ECCA3;
   transition: background-color 0.3s ease, color 0.3s ease;
   margin-bottom: 5px;
   width: 200px;
@@ -117,4 +117,8 @@ label {
   transition: background-color 0.3s ease, color 0.3s ease;
   margin-bottom: 10px;
   width: 200px;
+}
+.logo_div img {
+  height: 230px;
+  width: 100%;
 }
