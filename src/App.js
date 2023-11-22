@@ -115,7 +115,9 @@ const App = () => {
           />
         </div>
       </div>
-      <div className="third_grid"></div>
+      <div className="third_grid">
+      <CurrencyConverter></CurrencyConverter>
+      </div>
     </div>
   );
 };

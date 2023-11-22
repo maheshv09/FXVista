@@ -51,7 +51,7 @@ const CurrencyConverter = () => {
         <input type="number" value={amount} onChange={handleAmountChange} />
       </div>
       <div>
-        <label>From Currency:&nbsp;&nbsp;</label>
+        <label>From :&nbsp;&nbsp;</label>
         <select value={fromCurrency} onChange={handleFromCurrencyChange}>
           {Object.keys(exchangeRates).map(currency => (
             <option key={currency} value={currency}>
@@ -62,7 +62,7 @@ const CurrencyConverter = () => {
       </div>
 
       <div>
-        <label>To Currency:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <label>To :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
         <select value={toCurrency} onChange={handleToCurrencyChange}>
           {Object.keys(exchangeRates).map(currency => (
             <option key={currency} value={currency}>
@@ -80,6 +80,12 @@ const CurrencyConverter = () => {
           {amount} {fromCurrency} is equal to {convertedAmount} {toCurrency}
         </p>
       )}
+    </div>
+    <div className="extra_buttons">
+      <button>ABOUT US</button>
+    </div>
+    <div className="extra_buttons">
+      <button>GIT HUB</button>
     </div>
     </>
   );

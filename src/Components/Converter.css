@@ -60,6 +60,7 @@ label {
   border: 2px solid #02ad38;
   transition: background-color 0.3s ease, color 0.3s ease;
   margin-bottom: 5px;
+  width: 200px;
 }
 
 .convert_button button:hover {
@@ -74,8 +75,7 @@ label {
   font-size: 18px;
   margin-top: 20px;
 }
-.convertor_gridselect {
-  width: 100%;
+.convertor_grid select {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -86,7 +86,7 @@ label {
 
 .convertor_grid select:hover,
 .convertor_grid select:focus {
-  border-color: #4caf50; /* Change border color on hover/focus */
+  border-color: #4caf50; 
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.7); /* Add a subtle box-shadow on hover/focus */
 }
 
@@ -95,4 +95,27 @@ label {
   padding: 8px; /* Added padding for better spacing */
   background-color: #fff; /* Set background color for options */
   color: #333; /* Set text color for options */
+}
+.extra_buttons
+{
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+}
+.extra_buttons button
+{
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #000000;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-bottom: 10px;
+  width: 200px;
 }

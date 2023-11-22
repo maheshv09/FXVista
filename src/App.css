@@ -12,6 +12,7 @@ body {
   justify-content: center;
   width: 100%;
   flex-grow: 1; /* Take up remaining vertical space */
+  
 }
 .first_grid{
   padding: 10px;
@@ -27,6 +28,7 @@ body {
 {
   margin-bottom: 25px;
   color: #f74646; 
+  margin-top: 5px;
 }
 .currencies
 {
@@ -44,4 +46,11 @@ body {
   justify-content: center;
   justify-items: center;
   align-items: center;
+}
+.third_grid
+{
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: #91F8B1;
 }
