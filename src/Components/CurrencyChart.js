@@ -12,7 +12,7 @@ import {
 
 const CurrencyChart = ({ data, currencyName }) => {
   return (
-    <ResponsiveContainer width="100%" height={400}>
+    <ResponsiveContainer width={700} height={212}>
       <LineChart data={data}>
         <XAxis dataKey="label" />
         <YAxis />

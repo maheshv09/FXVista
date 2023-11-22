@@ -6,6 +6,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import CurrencySelector from "./Components/CurrencySelector";
 import DurationSelector from "./Components/DurationSelector";
 import "./App.css";
+import CurrencyConverter from "./Components/CurrencyConverter.jsx";
 
 const currencies = ["USD", "EUR", "GBP", "JPY"];
 const durations = ["Weekly", "Monthly", "Quarterly", "Yearly"];
@@ -57,65 +58,65 @@ const App = () => {
   }, [selectedDuration]);
 
   return (
-    <Container>
-      <Row>
-        <Col>
-          <h1 className="mt-4">Exchange Rate Dashboard</h1>
-        </Col>
-      </Row>
-      <Row className="mt-4">
-        <Col md={6}>
-          <CurrencySelector
-            currencies={currencies}
-            onSelectCurrency={setFirstCurrency}
-            selectedCurrency={firstCurrency}
-            selectorNumber={1}
+    <div className="dashboard">
+      <div className="first_grid">
+        <CurrencyConverter></CurrencyConverter>
+      </div>
+      <div className="second_grid">
+        <div className="line_graph">
+          <h1>Exchange Rate Dashboard</h1>
+          <div className="currencies">
+            <div className="currencies1">
+              <CurrencySelector
+                currencies={currencies}
+                onSelectCurrency={setSecondCurrency}
+                selectedCurrency={secondCurrency}
+                selectorNumber={2}
+              />
+            </div>
+            <div className="currencies1">
+              <CurrencySelector
+                currencies={currencies}
+                onSelectCurrency={setSecondCurrency}
+                selectedCurrency={secondCurrency}
+                selectorNumber={2}
+              />
+            </div>
+            <div className="currencies1">
+              <DurationSelector
+                durations={durations}
+                onSelectDuration={setSelectedDuration}
+                selectedDuration={selectedDuration}
+              />
+            </div>
+          </div>
+
+          <p>Exchange Rate Chart Placeholder</p>
+          <CurrencyChart
+            labels={chartData.labels}
+            data={chartData.data}
+            currencyName={secondCurrency}
           />
-        </Col>
-        <Col md={6}>
-          <CurrencySelector
-            currencies={currencies}
-            onSelectCurrency={setSecondCurrency}
-            selectedCurrency={secondCurrency}
-            selectorNumber={2}
-          />
-        </Col>
-      </Row>
-      <Row className="mt-4">
-        <Col>
-          <DurationSelector
-            durations={durations}
-            onSelectDuration={setSelectedDuration}
-            selectedDuration={selectedDuration}
-          />
-        </Col>
-      </Row>
-      <Row className="mt-4">
-        <Col>
-          <Card>
-            <Card.Body>
-              <div className="text-center">
-                <p className="mb-0">Exchange Rate Chart Placeholder</p>
-                <CurrencyChart
-                  labels={chartData.labels}
-                  data={chartData.data}
-                  currencyName={secondCurrency}
-                />
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-      <Row className="mt-4">
-        <Col>
-          {/* Render ExchangeRateDisplay component */}
           <ExchangeRateDisplay
             baseCurrency={firstCurrency}
             targetCurrency={secondCurrency}
           />
-        </Col>
-      </Row>
-    </Container>
+        </div>
+        <div className="bar_graph">
+        <p>Exchange Rate Chart Placeholder</p>
+          <CurrencyChart
+            labels={chartData.labels}
+            data={chartData.data}
+            currencyName={secondCurrency}
+          />
+          <ExchangeRateDisplay
+            baseCurrency={firstCurrency}
+            targetCurrency={secondCurrency}
+          />
+        </div>
+      </div>
+      <div className="third_grid"></div>
+    </div>
   );
 };
 
