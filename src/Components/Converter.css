@@ -8,11 +8,10 @@
   padding: 20px;
 }
 
-/* Header Styles */
 .convertor_grid h2 {
   font-weight: 700;
   color: #f74646; /* Reddish color */
-  font-size: 24px;
+  font-size: 22px;
   margin-bottom: 20px;
 }
 
@@ -80,8 +79,8 @@ label {
   border: 1px solid #ccc;
   border-radius: 10px;
   outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added outline transition */
-  padding: 8px; /* Added padding for better spacing */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+  padding: 8px; 
 }
 
 .convertor_grid select:hover,
