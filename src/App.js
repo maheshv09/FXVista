@@ -5,6 +5,7 @@ import ExchangeRateDisplay from "./Components/ExchangeDisplay.js"; // Import Exc
 import { Row, Col, Card, Container } from "react-bootstrap";
 import CurrencySelector from "./Components/CurrencySelector";
 import DurationSelector from "./Components/DurationSelector";
+import BarGraph from "./Components/BarGraph.js";
 import "./App.css";
 
 import CurrencyConverter from "./Components/CurrencyConverter.jsx";
@@ -37,6 +38,9 @@ const getChartDataForDuration = (duration) => {
 };
 
 const App = () => {
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+
   const [chartData, setChartData] = useState({
     labels: [],
     data: [],
@@ -47,16 +51,21 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const labels = getChartDataForDuration(selectedDuration).map(
-        (dataPoint) => dataPoint.label
+      const rawData = getChartDataForDuration(selectedDuration);
+      const filteredData = rawData.filter(
+        (dataPoint) =>
+          (!startDate || dataPoint.label >= startDate) &&
+          (!endDate || dataPoint.label <= endDate)
       );
-      const data = getChartDataForDuration(selectedDuration);
+
+      const labels = filteredData.map((dataPoint) => dataPoint.label);
+      const data = filteredData;
 
       setChartData({ labels, data });
     };
 
     fetchData();
-  }, [selectedDuration]);
+  }, [selectedDuration, startDate, endDate]);
 
   return (
     <div className="dashboard">
@@ -88,6 +97,10 @@ const App = () => {
                 durations={durations}
                 onSelectDuration={setSelectedDuration}
                 selectedDuration={selectedDuration}
+                startDate={startDate}
+                endDate={endDate}
+                onStartDateChange={setStartDate}
+                onEndDateChange={setEndDate}
               />
             </div>
           </div>
@@ -97,6 +110,9 @@ const App = () => {
             labels={chartData.labels}
             data={chartData.data}
             currencyName={secondCurrency}
+            startDate={startDate}
+            endDate={endDate}
+            selectedDuration={selectedDuration}
           />
           <ExchangeRateDisplay
             baseCurrency={firstCurrency}
@@ -104,12 +120,8 @@ const App = () => {
           />
         </div>
         <div className="bar_graph">
-          <p>Exchange Rate Chart Placeholder</p>
-          <CurrencyChart
-            labels={chartData.labels}
-            data={chartData.data}
-            currencyName={secondCurrency}
-          />
+          <h2>Bar Graph Placeholder</h2>
+          <BarGraph data={chartData.data} />
           <ExchangeRateDisplay
             baseCurrency={firstCurrency}
             targetCurrency={secondCurrency}
@@ -117,7 +129,7 @@ const App = () => {
         </div>
       </div>
       <div className="third_grid">
-      <CurrencyConverter></CurrencyConverter>
+        <CurrencyConverter></CurrencyConverter>
       </div>
     </div>
   );
