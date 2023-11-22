@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import CurrencyChart from "./Components/CurrencyChart.js";
 import ExchangeRateDisplay from "./Components/ExchangeDisplay.js"; // Import ExchangeRateDisplay
-import { Row, Col, Card, Container } from "react-bootstrap";
 import CurrencySelector from "./Components/CurrencySelector";
 import DurationSelector from "./Components/DurationSelector";
 import "./App.css";
