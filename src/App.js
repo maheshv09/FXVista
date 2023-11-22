@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import CurrencyChart from "./Components/CurrencyChart.js";
 import ExchangeRateDisplay from "./Components/ExchangeDisplay.js"; // Import ExchangeRateDisplay
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Row, Col, Card, Container } from "react-bootstrap";
 import CurrencySelector from "./Components/CurrencySelector";
 import DurationSelector from "./Components/DurationSelector";
 import "./App.css";
@@ -57,14 +57,14 @@ const App = () => {
   }, [selectedDuration]);
 
   return (
-    <Container>
+    <>
       <Row>
         <Col>
           <h1 className="mt-4">Exchange Rate Dashboard</h1>
         </Col>
       </Row>
       <Row className="mt-4">
-        <Col md={6}>
+        <Col md={1}>
           <CurrencySelector
             currencies={currencies}
             onSelectCurrency={setFirstCurrency}
@@ -115,7 +115,7 @@ const App = () => {
           />
         </Col>
       </Row>
-    </Container>
+    </>
   );
 };
 
