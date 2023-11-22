@@ -1,5 +1,5 @@
 import React from "react";
-import { Form } from "react-bootstrap";
+import "./DurationSelector.css"; // Import the corresponding CSS file
 
 const DurationSelector = ({
   durations,
@@ -7,20 +7,23 @@ const DurationSelector = ({
   selectedDuration,
 }) => {
   return (
-    <Form.Group controlId="durationSelector">
-      <Form.Label>Select Duration:</Form.Label>
-      <Form.Control
-        as="select"
+    <div className="duration-selector-container">
+      <label className="duration-label" htmlFor="durationSelector">
+        Select Duration:
+      </label>
+      <select
+        id="durationSelector"
         value={selectedDuration}
         onChange={(e) => onSelectDuration(e.target.value)}
+        className="duration-select"
       >
         {durations.map((duration) => (
           <option key={duration} value={duration}>
             {duration}
           </option>
         ))}
-      </Form.Control>
-    </Form.Group>
+      </select>
+    </div>
   );
 };
 

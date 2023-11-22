@@ -12,7 +12,7 @@ import {
 
 const CurrencyChart = ({ data, currencyName }) => {
   return (
-    <ResponsiveContainer width="100%" height={400}>
+    <ResponsiveContainer width={700} height={212}>
       <LineChart data={data}>
         <XAxis dataKey="label" />
         <YAxis />
@@ -26,7 +26,7 @@ const CurrencyChart = ({ data, currencyName }) => {
         <Line
           type="monotone"
           dataKey="value"
-          stroke="rgba(75,192,192,1)"
+          stroke="rgb(102,195,172)"
           strokeWidth={2}
           name={`Conversion Rate for 1 USD to ${currencyName}`}
         />

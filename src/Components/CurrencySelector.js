@@ -1,6 +1,6 @@
 // CurrencySelector.js
 import React from "react";
-import { Form } from "react-bootstrap";
+import './CurrencySelector.css'
 
 const CurrencySelector = ({
   currencies,
@@ -9,10 +9,11 @@ const CurrencySelector = ({
   selectorNumber,
 }) => {
   return (
-    <Form.Group controlId={`currencySelector${selectorNumber}`}>
-      <Form.Label>Select Currency:</Form.Label>
-      <Form.Control
-        as="select"
+    <div className="currency-form" style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
+      <label htmlFor={`currencySelector${selectorNumber}`}>Currency:</label>
+      <select
+        className="form-control"
+        id={`currencySelector${selectorNumber}`}
         value={selectedCurrency}
         onChange={(e) => onSelectCurrency(e.target.value)}
       >
@@ -21,8 +22,8 @@ const CurrencySelector = ({
             {currency}
           </option>
         ))}
-      </Form.Control>
-    </Form.Group>
+      </select>
+    </div>
   );
 };
 
