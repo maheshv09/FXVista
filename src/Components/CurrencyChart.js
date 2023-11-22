@@ -14,8 +14,8 @@ const CurrencyChart = ({ data, currencyName }) => {
   return (
     <ResponsiveContainer width={700} height={212}>
       <LineChart data={data}>
-        <XAxis dataKey="label" tick={{ fill: '#fff' }} />
-        <YAxis tick={{ fill: '#fff' }} />
+        <XAxis dataKey="label" tick={{ fill: "#fff" }} />
+        <YAxis tick={{ fill: "#fff" }} />
         <Tooltip
           formatter={(value) => [
             value,
@@ -28,6 +28,8 @@ const CurrencyChart = ({ data, currencyName }) => {
           dataKey="value"
           stroke="rgb(102,195,172)"
           strokeWidth={2}
+          dot={false} // Remove circles from the line chart
+          isAnimationActive={false} // Disable animation
           name={`Conversion Rate for 1 USD to ${currencyName}`}
         />
       </LineChart>
