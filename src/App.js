@@ -1,20 +1,20 @@
 // App.js
 import React, { useState, useEffect } from "react";
 import CurrencyChart from "./Components/CurrencyChart.js";
+import ExchangeRateDisplay from "./Components/ExchangeDisplay.js"; // Import ExchangeRateDisplay
 import { Container, Row, Col, Card } from "react-bootstrap";
 import CurrencySelector from "./Components/CurrencySelector";
 import DurationSelector from "./Components/DurationSelector";
 import "./App.css";
-// Import other components as needed
 
-const currencies = ["USD", "EUR", "GBP", "JPY"]; // Add more currencies as needed
+const currencies = ["USD", "EUR", "GBP", "JPY"];
 const durations = ["Weekly", "Monthly", "Quarterly", "Yearly"];
 
 const generateRandomData = (length) => {
   // Function to generate random data for testing
   return Array.from({ length }, (_, index) => ({
     label: `2023-11-${index + 1}`,
-    value: Math.random() * 10 + 80, // Generate random values for testing
+    value: Math.random() * 10 + 80,
   }));
 };
 
@@ -30,7 +30,7 @@ const getChartDataForDuration = (duration) => {
     case "Yearly":
       return generateRandomData(365);
     default:
-      return generateRandomData(7); // Default to weekly if duration is not recognized
+      return generateRandomData(7);
   }
 };
 
@@ -40,7 +40,7 @@ const App = () => {
     data: [],
   });
   const [firstCurrency, setFirstCurrency] = useState("USD");
-  const [secondCurrency, setSecondCurrency] = useState("EUR");
+  const [secondCurrency, setSecondCurrency] = useState("INR");
   const [selectedDuration, setSelectedDuration] = useState("Weekly");
 
   useEffect(() => {
@@ -104,6 +104,15 @@ const App = () => {
               </div>
             </Card.Body>
           </Card>
+        </Col>
+      </Row>
+      <Row className="mt-4">
+        <Col>
+          {/* Render ExchangeRateDisplay component */}
+          <ExchangeRateDisplay
+            baseCurrency={firstCurrency}
+            targetCurrency={secondCurrency}
+          />
         </Col>
       </Row>
     </Container>
