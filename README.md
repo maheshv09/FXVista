@@ -16,7 +16,7 @@ FORexFLOW is a powerful currency exchange dashboard designed to provide real-tim
 
 ## How to Use FORexFLOW
 
-1. **Visit the FORexFLOW Website:** Go to [FORexFLOW](https://your-forexflow-website.com) to access the currency exchange dashboard.
+1. **Visit the FORexFLOW Website:** Go to FORexFLOW to access the currency exchange dashboard.
 
 2. **Explore Exchange Rates:** Navigate through the dashboard to explore real-time and historical exchange rates.
 
