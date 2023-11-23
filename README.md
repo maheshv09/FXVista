@@ -36,12 +36,9 @@ To run FORexFLOW locally or contribute to its development, follow these detailed
    ```bash
    git clone https://github.com/your-username/FORexFLOW.git
 
-
-## Available Scripts
-
 In the project directory, you can run:
-
-### `npm start`
+### 1. npm install
+### 2 `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
